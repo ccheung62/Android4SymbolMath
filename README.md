@@ -17,7 +17,7 @@ An android app for students and teachers to practice simple math.
 - Story: Generates practice problems for students to improve their binomial algebra skill individually
 - Market: Students who are struggling with binomial algebra 
 - Habit: This app could be used whenever the user wants as well as during test prep or tutoring
-- Scope: We could start with a small tutoring group or class, then borden the audience to the school and other circularium 
+- Scope: We could start with a small tutoring group or class, then broaden the audience to the school and other curriculum
 
 ## Product Spec
 
