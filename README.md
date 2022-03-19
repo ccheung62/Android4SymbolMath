@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-[Description of your app]
+An android app for students and teachers to practice simple math.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
