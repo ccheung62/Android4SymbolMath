@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">4SymbolMath</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">mocWOUfX6uU3KOLaQ1FkJTJztL8Gj469p4DTRD00</string>
+    <string name="back4app_client_key">BWd9KDgTX5cVGBE3Et61QWyXwi1jJHLoydG1hInx</string>
 </resources>
