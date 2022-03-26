@@ -6,49 +6,73 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/FirstNumbertv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Largest First Number"
+        android:layout_marginTop="120dp"
+        android:text="Largest 1st\n Number"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/FirstNumber"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="183dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Largest Second Number"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumberSigned2"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="457dp" />
+        app:layout_constraintTop_toBottomOf="@+id/numberRangeTitle" />
 
     <Button
         android:id="@+id/StartButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="Start"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextNumberSigned"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberSigned"
+    <TextView
+        android:id="@+id/numberRangeTitle"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Choose the largest Number"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="183dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned2"
+        android:id="@+id/FirstNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="440dp" />
+        app:layout_constraintTop_toBottomOf="@+id/numberRangeTitle" />
+
+    <EditText
+        android:id="@+id/SecondNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/FirstNumbertv"
+        app:layout_constraintTop_toTopOf="@+id/SecondNumbertv" />
+
+    <TextView
+        android:id="@+id/SecondNumbertv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        android:text="Largest 2nd\n Number"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstNumbertv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
