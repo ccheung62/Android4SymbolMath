@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProblemDisplay">
+
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:text="Quit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionNumber"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        app:layout_constraintStart_toEndOf="@+id/quit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:text="00:00"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/favorite"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
+
+
+    <TextView
+        android:id="@+id/firstNum"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:textAlignment="center"
+        android:text="10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/secondNum"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:text="7"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstNum" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="90dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_margin="10dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondNum" />
+
+
+
+    <EditText
+        android:id="@+id/userAnswer"
+        android:layout_width="90dp"
+        android:layout_height="65dp"
+        android:hint="Answer"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:textAlignment="center"
+        android:text="x"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/secondNum"
+
+        app:layout_constraintTop_toTopOf="@+id/secondNum" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAnswer" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
