@@ -25,7 +25,7 @@ class ProblemDisplay : AppCompatActivity() {
 }
 
 
-c/*lass logic {
+/*lass logic {
     init {
         val hist: ArrayList<history> = ArrayList<history>()
 
