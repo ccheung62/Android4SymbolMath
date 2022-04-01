@@ -25,8 +25,7 @@ class ProblemDisplay : AppCompatActivity() {
 }
 
 
-class main {
-    companion object @JvmStatic constructor(args: Array<String>);
+c/*lass logic {
     init {
         val hist: ArrayList<history> = ArrayList<history>()
 
@@ -66,7 +65,7 @@ class main {
                 } else if (sign == "/")
                     realans = one / two
                     one = realans * two
-                }
+                }while (sign == " ")
                 try {
                     input = scan.nextInt()//change this to user input
                 } catch (e: Exception) {//exit condition.. change to enter button
@@ -86,17 +85,13 @@ class main {
                     incorrect++
                     hist.add(temp)
                 }
-            } while (!correct)
+            }
         }
         //start conclusion
-        for (x in hist) { //print stats
-            System.out.println(x.form())
-        }
-        println("\nIncorrect: $incorrect")
-        println("Total: $total")
     }
-}
+}*/
 
+/*
 class history(//first number(largest)
     private val one: Int, two: Int, ans: Int, answer: Boolean, sign: String?
 ) {
@@ -128,14 +123,16 @@ class history(//first number(largest)
         return answer
     }
 
-    /*
+    */
+/*
     constructor
     one is the first number
     two is the second number
     ans is the user input
     answer is if user was right or wrong
     form is a formatted readable string
-    */
+    *//*
+
     init {
         one = one
         this.two = two
@@ -147,3 +144,4 @@ class history(//first number(largest)
         )
     }
 }
+*/
