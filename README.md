@@ -25,11 +25,12 @@ An android app for students and teachers to practice simple math.
 
 Required Must-have Stories
 
-* User logs in to access their study record
-* User picks the diffculity they want
-* A page that generates question based on their preference
-* Profile page for each user
-* Settings (diffculity settings)
+* User logs in to access their study record [X]
+* User can access there record(view favorited problems or all their problems which have been recorded in history) []
+* User picks the diffculity they want []
+* A page that generates question based on their preference []
+* Profile page for each user []
+* Settings (diffculity settings) []
 
 Optional Nice-to-have Stories
 
