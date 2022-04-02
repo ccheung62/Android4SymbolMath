@@ -56,15 +56,15 @@ class ProblemDisplay : AppCompatActivity() {
         }
         findViewById<Button>(R.id.submit).setOnClickListener {
             try{
-                var input =
+                val input =
                     Integer.parseInt(findViewById<EditText>(R.id.userAnswer).text.toString())
                 if (realans == input) {
                     total++
                     findViewById<TextView>(R.id.questionNumber).text = (total+1).toString()
                     Toast.makeText(this, "CORRECT", Toast.LENGTH_SHORT).show()
 
-                    var one = (Math.random() * max1).toInt() + 1
-                    var two = (Math.random() * max2).toInt() + 1
+                    one = (Math.random() * max1).toInt() + 1
+                    two = (Math.random() * max2).toInt() + 1
                     if (one < two) {
                         val swap = one
                         one = two
