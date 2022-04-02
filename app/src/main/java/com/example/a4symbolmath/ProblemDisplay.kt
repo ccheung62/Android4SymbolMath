@@ -94,7 +94,6 @@ class ProblemDisplay : AppCompatActivity() {
             }catch(e: JSONException){
                 Toast.makeText(this,"Put Some Answer",Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 }
