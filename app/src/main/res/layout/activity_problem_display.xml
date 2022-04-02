@@ -48,12 +48,12 @@
         android:id="@+id/firstNum"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:textAlignment="center"
         android:text="10"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/secondNum"
