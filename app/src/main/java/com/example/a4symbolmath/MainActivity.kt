@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btPractice).setOnClickListener{
             val intent = Intent(this, OperationSelect::class.java)
             startActivity(intent)
-            finish()
         }
             //code provided by back4app to test the apps connectivity to the parse sdk and the test was successful
 /*                val firstObject = ParseObject("FirstClass")
