@@ -25,7 +25,7 @@ class ProblemDisplay : AppCompatActivity() {
 }
 
 
-/*lass logic {
+/*class logic {
     init {
         val hist: ArrayList<history> = ArrayList<history>()
 
@@ -67,7 +67,7 @@ class ProblemDisplay : AppCompatActivity() {
                     one = realans * two
                 }while (sign == " ")
                 try {
-                    input = scan.nextInt()//change this to user input
+                    input = //change this to user input
                 } catch (e: Exception) {//exit condition.. change to enter button
                     loop = false
                     break
