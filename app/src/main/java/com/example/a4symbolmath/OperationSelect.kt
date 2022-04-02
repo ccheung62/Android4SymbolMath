@@ -33,7 +33,7 @@ class OperationSelect : AppCompatActivity() {
     private fun verify( operation : String ){
         var max1 = findViewById<EditText>(R.id.FirstNumberInput).text.toString()
         var max2 = findViewById<EditText>(R.id.SecondNumberInput).text.toString()
-        if(max1 == "" || max2 == ""){
+        if(max1.isEmpty() || max2.isEmpty()){
             Toast.makeText(this,"Missing numbers",Toast.LENGTH_SHORT).show()
         }
         else{
