@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvFirstNum"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:text="10"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSign"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="x"
+        app:layout_constraintStart_toEndOf="@+id/tvFirstNum"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSecondNum"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:textSize="30sp"
+        android:text="7"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/tvSign"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEqual"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="="
+
+        app:layout_constraintStart_toEndOf="@+id/tvSecondNum"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAns"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="70"
+        app:layout_constraintStart_toEndOf="@+id/tvEqual"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
