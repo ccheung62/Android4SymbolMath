@@ -12,7 +12,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
-        android:text="Choose the largest Number"
+        android:text="Choose the Largest Number"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,8 +27,6 @@
         android:layout_marginTop="10dp"
         android:text="Largest 1st\n Number"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberRangeTitle" />
 
@@ -36,13 +34,12 @@
         android:id="@+id/FirstNumberInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:ems="8"
         android:hint="ie: 16"
         android:inputType="number"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FirstNumberTv"
         tools:ignore="Autofill" />
@@ -52,12 +49,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
         android:ems="8"
         android:hint="ie: 8"
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/SecondNumberTv"
         tools:ignore="Autofill" />
 
@@ -68,8 +65,6 @@
         android:text="Largest 2nd\n Number"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/FirstNumberTv" />
 
     <TextView
@@ -92,11 +87,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="15dp"
         android:text="+"
         android:textSize="100dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/FirstNumberTv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOperation" />
 
@@ -104,12 +97,11 @@
         android:id="@+id/buttonSubtraction"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginEnd="10dp"
         android:text="−"
         android:textSize="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/SecondNumberInput"
         app:layout_constraintTop_toTopOf="@+id/buttonAddition" />
 
     <Button
@@ -134,13 +126,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/buttonSubtraction"
         app:layout_constraintTop_toBottomOf="@+id/buttonSubtraction" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
