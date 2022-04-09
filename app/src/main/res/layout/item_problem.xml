@@ -7,19 +7,22 @@
 
     <TextView
         android:id="@+id/tvFirstNum"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="10"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="30dp"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivFavorite"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvSign"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
         android:textAlignment="center"
         android:text="x"
         app:layout_constraintStart_toEndOf="@+id/tvFirstNum"
@@ -27,9 +30,10 @@
 
     <TextView
         android:id="@+id/tvSecondNum"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
         android:text="7"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/tvSign"
@@ -37,22 +41,56 @@
 
     <TextView
         android:id="@+id/tvEqual"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
         android:textAlignment="center"
         android:text="="
-
         app:layout_constraintStart_toEndOf="@+id/tvSecondNum"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvAns"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
         android:textAlignment="center"
         android:text="70"
         app:layout_constraintStart_toEndOf="@+id/tvEqual"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvFirstNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+    <TextView
+        android:id="@+id/tvAttemptSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Attempt: "
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvAns"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAttemptNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="10"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttemptSubtitle"
+        app:layout_constraintRight_toRightOf="@+id/tvAttemptSubtitle"
+        app:layout_constraintLeft_toLeftOf="@+id/tvAttemptSubtitle"
+        tools:layout_editor_absoluteX="274dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

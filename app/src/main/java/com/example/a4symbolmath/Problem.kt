@@ -43,6 +43,12 @@ class Problem: ParseObject() {
     fun setTotalAttempts(attempts : Int){
         put(KEY_ATTEMPT, attempts)
     }
+    fun getAnswer() : Int {
+        return getInt(KEY_ANSWER)
+    }
+    fun setAnswer(answer : Int) {
+        put(KEY_ANSWER, answer)
+    }
 
     companion object{
         const val KEY_SIGN = "sign"
@@ -51,5 +57,6 @@ class Problem: ParseObject() {
         const val KEY_FAVE = "isFavorite"
         const val KEY_USER = "user"
         const val KEY_ATTEMPT = "totalAttempts"
+        const val KEY_ANSWER = "answer"
     }
 }

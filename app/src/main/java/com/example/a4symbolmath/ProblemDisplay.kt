@@ -72,7 +72,7 @@ class ProblemDisplay : AppCompatActivity() {
                     total++
                     findViewById<TextView>(R.id.questionNumber).text = (total+1).toString()
                     Toast.makeText(this, "CORRECT", Toast.LENGTH_SHORT).show()
-                    submitProblem(fave, one, two, sign, attempt)
+                    submitProblem(fave, one, two, sign, attempt, input)
 
                     fave = false
                     attempt = 0
@@ -110,7 +110,7 @@ class ProblemDisplay : AppCompatActivity() {
         }
     }
     // Send a problem object to the Parse Server
-    fun submitProblem(isFavorite: Boolean, firstNum : Int, secondNum : Int, sign : String, attempt : Int){
+    fun submitProblem(isFavorite: Boolean, firstNum : Int, secondNum : Int, sign : String, attempt : Int, answer : Int){
         // Create a problem object
         val problem = Problem()
         val user = ParseUser.getCurrentUser()
@@ -120,6 +120,7 @@ class ProblemDisplay : AppCompatActivity() {
         problem.setFave(isFavorite)
         problem.setSign(sign)
         problem.setTotalAttempts(attempt)
+        problem.setAnswer(answer)
         problem.saveInBackground { exception ->
             if (exception != null){
                 Log.e(TAG, "Error while saving post")
