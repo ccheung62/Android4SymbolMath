@@ -127,12 +127,9 @@ class ProblemDisplay : AppCompatActivity()  {
         problem.setAnswer(answer)
         problem.saveInBackground { exception ->
             if (exception != null){
-                Log.e(TAG, "Error while saving post")
-                Log.e(TAG, "The exception is $exception")
-                Toast.makeText(this, "Error creating post $exception", Toast.LENGTH_SHORT).show()
+                Log.e(TAG, "Error while saving problem")
             } else {
-                Log.i(TAG, "Successfully saved post")
-                Toast.makeText(this, "Post had been successfully saved", Toast.LENGTH_SHORT).show()
+                Log.i(TAG, "Successfully saved problem")
             }
         }
     }

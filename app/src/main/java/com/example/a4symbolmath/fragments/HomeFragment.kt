@@ -69,6 +69,7 @@ class HomeFragment : Fragment() {
         // Specify which class to query
         val query: ParseQuery<Problem> = ParseQuery.getQuery(Problem::class.java)
         query.include(Problem.KEY_USER)
+        query.whereEqualTo(Problem.KEY_USER, ParseUser.getCurrentUser())
         // Return post in descending order
         query.addDescendingOrder("createdAt")
         query.setLimit(20)

@@ -45,6 +45,7 @@ class FaveFragment : Fragment() {
         // Specify which class to query
         val query: ParseQuery<Problem> = ParseQuery.getQuery(Problem::class.java)
         query.include(Problem.KEY_USER)
+        query.whereEqualTo(Problem.KEY_USER, ParseUser.getCurrentUser())
         query.whereEqualTo(Problem.KEY_FAVE, true)
         // Return post in descending order
         query.addDescendingOrder("createdAt")
