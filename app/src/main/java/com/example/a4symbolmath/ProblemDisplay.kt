@@ -15,6 +15,7 @@ private const val TAG = "ProblemDisplay"
 class ProblemDisplay : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        var timer = findViewById<Chronometer>(R.id.timer)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_problem_display)
         val sign = intent.getStringExtra("operation")!!
@@ -51,6 +52,7 @@ class ProblemDisplay : AppCompatActivity()  {
             one = realans * two
             findViewById<TextView>(R.id.sign).text = "÷"
         }
+
 
         findViewById<TextView>(R.id.firstNum).text = one.toString()
         findViewById<TextView>(R.id.secondNum).text = two.toString()
