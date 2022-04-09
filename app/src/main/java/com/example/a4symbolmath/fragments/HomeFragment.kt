@@ -12,7 +12,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.a4symbolmath.OperationSelect
 import com.example.a4symbolmath.Problem
 import com.example.a4symbolmath.ProblemAdapter
 import com.example.a4symbolmath.R
@@ -20,22 +19,25 @@ import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
 import com.parse.ParseUser
-import org.w3c.dom.Text
 
 private const val TAG = "HomeFragment"
+
 
 class HomeFragment : Fragment() {
 
     lateinit var rvProblem : RecyclerView
     lateinit var adapter : ProblemAdapter
+
     var allProblems = ArrayList<Problem>()
 
     override fun onCreateView(
         inflater : LayoutInflater , container : ViewGroup? ,
         savedInstanceState : Bundle?
     ) : View? {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home , container , false)
+
     }
 
     override fun onViewCreated(view : View , savedInstanceState : Bundle?) {
@@ -46,10 +48,6 @@ class HomeFragment : Fragment() {
         var username = user.username
         view.findViewById<TextView>(R.id.tvUsername).text = "Hello, $username!"
 
-        view.findViewById<Button>(R.id.btPractice).setOnClickListener{
-            val intent = Intent(requireContext(), OperationSelect::class.java)
-            startActivity(intent)
-        }
 
         var progressNum = user.get("goal")
         var currentNum = user.get("currentQuestion")

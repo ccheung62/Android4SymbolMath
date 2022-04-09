@@ -1,5 +1,6 @@
 package com.example.a4symbolmath
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
@@ -11,7 +12,7 @@ import java.io.File
 
 private const val TAG = "ProblemDisplay"
 
-class ProblemDisplay : AppCompatActivity() {
+class ProblemDisplay : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,8 +56,7 @@ class ProblemDisplay : AppCompatActivity() {
         findViewById<TextView>(R.id.secondNum).text = two.toString()
 
         findViewById<Button>(R.id.quit).setOnClickListener {
-            Toast.makeText(this, "Give up and return to difficulty select", Toast.LENGTH_SHORT)
-                .show()
+            gotoMainActivity()
         }
         findViewById<ImageButton>(R.id.favorite).setOnClickListener {
             fave = true
@@ -135,6 +135,12 @@ class ProblemDisplay : AppCompatActivity() {
                 Toast.makeText(this, "Post had been successfully saved", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun gotoMainActivity() {
+        val intent = Intent(this@ProblemDisplay, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 
