@@ -25,17 +25,20 @@ An android app for students and teachers to practice simple math.
 
 Required Must-have Stories
 
-* User logs in to access their study record [X]
-* User can access there record(view favorited problems or all their problems which have been recorded in history) []
-* User picks the diffculity they want []
-* A page that generates question based on their preference []
-* Profile page for each user []
-* Settings (diffculity settings) []
+* [x] User logs in to access their study record 
+* [x] User can access there record
+    * View favorited problems / all previous attempted problems 
+* [x] User picks the diffculity they want 
+* [x] A page that generates question based on their preference 
+* [x] Settings 
+    * daily goals
+    * changing username/ password
 
 Optional Nice-to-have Stories
 
-* [fill in your required user stories here]
-* ...
+* [x] Progress bar to track how much problem the user have complete
+    * Flexible max number that can be changed in settings
+* [x] Ability to log out
 
 ### 2. Screen Archetypes
 
@@ -43,7 +46,7 @@ Optional Nice-to-have Stories
 * Register
    * Upon Download/Reopening of the appliation, the user is asked to login or register 
    * their information would be logged in a database for future reference
-* Home screen where User can start practicing or look upon their past practice history.
+* Home screen where User look upon their past practice history.
 * Diffuculty
    * User chooses their desired difficulty for what they are practicing
 * Practice
@@ -55,13 +58,17 @@ Tab Navigation (Tab to Screen)
 
 * Login/Register
 * Home Feed
-* Profile
+* Setting
+* Generate
+* Favorite Feed
 
 Flow Navigation (Screen to Screen)
 
 * Forced Log-in -> Account creation if no log in is available
-* Home Feed -> Selection of difficulty and area to practice
-* Profile -> Display their history of practice problems
+* Home Feed -> See previous attempt question and how much question was completed already
+* Generate -> Choose difficulty and operation 
+* Problem Display -> Area where user can practice and favorite those problems
+* Favorite Feed -> Display their favorite practice problems
 * Settings -> Change their preferences
 
 ## Wireframes
@@ -75,19 +82,77 @@ Flow Navigation (Screen to Screen)
 ## Schema 
 
 ### Models
-
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    | userId        | String   | unique id for each user |
-   | Difficulty    | String   | idenify the diffculity of the problems generated |
-   | History       | Array of Strings | history of the problems that the user has completed |
+   | Goal          | Number   | identity the number of question the user wants to complete |
+   | CurrentNum    | Number   | tracks the number of question the user have finished |
+   | Problem       | Object   | tracks the problem itself and whether it is favorited |
+
 ### Networking
 - Home Feed Screen
-    - (READ/GET) The users original difficulty and other preferences
-- Practice Screen
-    - (READ/GET) Problems based on the user's setting
-- Profile Screen
-    - (Update/PUT) Update various preferences
-    - (READ/GET) Problems that they had favorited
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+    - (READ/GET) The users previous attempted question 
+    ```
+    // Specify which class to query
+        val query: ParseQuery<Problem> = ParseQuery.getQuery(Problem::class.java)
+        query.include(Problem.KEY_USER)
+        query.whereEqualTo(Problem.KEY_USER, ParseUser.getCurrentUser())
+        // Return problem in descending order
+        query.addDescendingOrder("createdAt")
+        query.setLimit(20)
+
+        // Find all Problem
+        query.findInBackground(object : FindCallback<Problem> {
+            override fun done(problems: MutableList<Problem>?, e: ParseException?) {
+                if (e != null) {
+                    Log.e(TAG, "Error fetching problems")
+                } else if (problems != null) {
+                    adapter.clear()
+                    allProblems.addAll(problems)
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        })
+    ```
+    - (READ/GET) The user goal and current number of question completed
+    ```
+        var progressNum = user.get("goal")
+        var currentNum = user.get("currentQuestion")
+    ```
+- Setting Screen
+    - (Update/PUT) Update username/ password
+    ```
+        val username = view.findViewById<EditText>(R.id.etChangeUsername).text.toString()
+        user.username = username
+        user.saveInBackground()
+    ```
+    - (Update/PUT) Update the user's goal
+    ```
+        user.put("goal", goalNum)
+        user.saveInBackground()
+    ```
+- Favorite Screen 
+    - (READ/GET) The problems the user favorited
+    ```
+        // Specify which class to query
+        val query: ParseQuery<Problem> = ParseQuery.getQuery(Problem::class.java)
+        query.include(Problem.KEY_USER)
+        query.whereEqualTo(Problem.KEY_USER, ParseUser.getCurrentUser())
+        query.whereEqualTo(Problem.KEY_FAVE, true)
+        // Return problem in descending order
+        query.addDescendingOrder("createdAt")
+        query.setLimit(20)
+
+        // Find all Problem
+        query.findInBackground(object : FindCallback<Problem> {
+            override fun done(problems: MutableList<Problem>?, e: ParseException?) {
+                if (e != null) {
+                    Log.e(TAG, "Error fetching problems")
+                } else if (problems != null) {
+                    adapter.clear()
+                    allFavorite.addAll(problems)
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        })
+    ```

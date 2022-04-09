@@ -47,7 +47,7 @@ class FaveFragment : Fragment() {
         query.include(Problem.KEY_USER)
         query.whereEqualTo(Problem.KEY_USER, ParseUser.getCurrentUser())
         query.whereEqualTo(Problem.KEY_FAVE, true)
-        // Return post in descending order
+        // Return problem in descending order
         query.addDescendingOrder("createdAt")
         query.setLimit(20)
 
