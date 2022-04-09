@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -42,6 +43,9 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        // Set default selection
+        findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = R.id.action_home
 
         //code provided by back4app to test the apps connectivity to the parse sdk and the test was successful (used before adding bottom navigation view and fragments)
 /*                val firstObject = ParseObject("FirstClass")
