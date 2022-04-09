@@ -64,10 +64,11 @@ class ProblemDisplay : AppCompatActivity()  {
                 .show()
         }
         findViewById<Button>(R.id.submit).setOnClickListener {
-            attempt++
             try{
+                attempt++
                 val input =
                     Integer.parseInt(findViewById<EditText>(R.id.userAnswer).text.toString())
+                findViewById<EditText>(R.id.userAnswer).getText().clear()
                 if (realans == input) {
                     total++
                     findViewById<TextView>(R.id.questionNumber).text = (total+1).toString()
