@@ -31,8 +31,8 @@ Required Must-have Stories
 * [x] User picks the diffculity they want 
 * [x] A page that generates question based on their preference 
 * [x] Settings 
-    * daily goals
-    * changing username/ password
+    * Change daily goals
+    * Change username/ password
 
 Optional Nice-to-have Stories
 
@@ -46,11 +46,14 @@ Optional Nice-to-have Stories
 * Register
    * Upon Download/Reopening of the appliation, the user is asked to login or register 
    * their information would be logged in a database for future reference
-* Home screen where User look upon their past practice history.
+* Home screen 
+   * look upon Users past practice history
 * Diffuculty
    * User chooses their desired difficulty for what they are practicing
 * Practice
     * Area to practice
+* Setting
+   * Change username/ password
 
 ### 3. Navigation
 
