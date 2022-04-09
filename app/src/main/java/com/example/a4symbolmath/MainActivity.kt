@@ -1,5 +1,6 @@
 package com.example.a4symbolmath
 
+import FaveFragment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.a4symbolmath.fragments.GenerateFragment
 import com.example.a4symbolmath.fragments.HomeFragment
 import com.example.a4symbolmath.fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,9 +31,11 @@ class MainActivity : AppCompatActivity() {
                     fragmentToShow=HomeFragment()
                 }
                 R.id.action_generate -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                    fragmentToShow= GenerateFragment()
                 }
-                R.id.action_history -> {Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()}
+                R.id.action_fave -> {
+                    fragmentToShow= FaveFragment()
+                }
                 R.id.action_settings -> {
                     fragmentToShow= SettingsFragment()
                 }

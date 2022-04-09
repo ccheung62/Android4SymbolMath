@@ -13,9 +13,9 @@
         android:title="Generate"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_history"
-        android:icon="@android:drawable/ic_menu_recent_history"
-        android:title="History"
+        android:id="@+id/action_fave"
+        android:icon="@drawable/ic_baseline_star_rate_24"
+        android:title="Favorites"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_settings"
