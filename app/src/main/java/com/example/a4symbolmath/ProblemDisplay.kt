@@ -111,9 +111,13 @@ class ProblemDisplay : AppCompatActivity() {
     }
     // Send a problem object to the Parse Server
     fun submitProblem(isFavorite: Boolean, firstNum : Int, secondNum : Int, sign : String, attempt : Int, answer : Int){
+        val user = ParseUser.getCurrentUser()
+        val curNum = user.get("currentQuestion") as Int
+        user.put("currentQuestion", curNum+1)
+        user.saveInBackground()
+
         // Create a problem object
         val problem = Problem()
-        val user = ParseUser.getCurrentUser()
         problem.setUser(user)
         problem.setFirstNum(firstNum)
         problem.setSecondNum(secondNum)

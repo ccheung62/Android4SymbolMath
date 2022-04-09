@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,13 +41,23 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view : View , savedInstanceState : Bundle?) {
         super.onViewCreated(view , savedInstanceState)
 
-        var username = ParseUser.getCurrentUser().username
-        view.findViewById<TextView>(R.id.tvUsername).text = "Hello, $username"
+        val user = ParseUser.getCurrentUser()
+
+        var username = user.username
+        view.findViewById<TextView>(R.id.tvUsername).text = "Hello, $username!"
 
         view.findViewById<Button>(R.id.btPractice).setOnClickListener{
             val intent = Intent(requireContext(), OperationSelect::class.java)
             startActivity(intent)
         }
+
+        var progressNum = user.get("goal")
+        var currentNum = user.get("currentQuestion")
+        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
+        progressBar.setProgress(currentNum as Int)
+        progressBar.max = progressNum as Int
+        view.findViewById<TextView>(R.id.tvCurrentNumber).text = currentNum.toString()
+        view.findViewById<TextView>(R.id.tvGoalNumber).text = progressNum.toString()
 
         rvProblem = view.findViewById(R.id.rvProblems)
         adapter = ProblemAdapter(requireContext(), allProblems)
