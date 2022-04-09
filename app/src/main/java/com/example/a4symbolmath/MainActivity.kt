@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.a4symbolmath.fragments.HomeFragment
+import com.example.a4symbolmath.fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.parse.ParseObject
 import com.parse.ParseUser
@@ -31,7 +32,9 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                 }
                 R.id.action_history -> {Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()}
-                R.id.action_settings -> {Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()}
+                R.id.action_settings -> {
+                    fragmentToShow= SettingsFragment()
+                }
                 R.id.action_logout -> {
                     ParseUser.logOut()
                     val currentUser = ParseUser.getCurrentUser()
