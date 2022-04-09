@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
         var progressNum = user.get("goal")
         var currentNum = user.get("currentQuestion")
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
-        progressBar.setProgress(currentNum as Int)
+        progressBar.progress = currentNum as Int
         progressBar.max = progressNum as Int
         view.findViewById<TextView>(R.id.tvCurrentNumber).text = currentNum.toString()
         view.findViewById<TextView>(R.id.tvGoalNumber).text = progressNum.toString()
