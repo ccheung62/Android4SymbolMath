@@ -1,5 +1,8 @@
 # 4SymbolMath
 
+## Demo
+<img src="4SymbolMathDemo.gif" width=400>
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
